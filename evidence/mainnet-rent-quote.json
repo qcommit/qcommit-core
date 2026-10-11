@@ -1,0 +1,38 @@
+{
+  "format": "qcommit/deployment-rent-quote/1",
+  "checkedAt": "2026-10-11T04:01:23.394Z",
+  "cluster": "mainnet-beta",
+  "genesis": "5eykt4UsFv8P8NJdTREpY1vzqKqZKvdpKuc147dw2N9d",
+  "rpc": "https://api.mainnet-beta.solana.com",
+  "programBytes": 168568,
+  "programSha256": "d71c18378db12dc6e36f9864043054557ec02610dbc1accb50a3c805147ab61d",
+  "rent": {
+    "programAccount": {
+      "bytes": 36,
+      "lamports": "833120"
+    },
+    "programData": {
+      "bytes": 168613,
+      "lamports": "857204280"
+    },
+    "uploadBuffer": {
+      "bytes": 168605,
+      "lamports": "857163640"
+    },
+    "configuration": {
+      "bytes": 105,
+      "lamports": "1183640"
+    }
+  },
+  "permanentRentLamports": "859221040",
+  "conservativePeakRentLamports": "1716384680",
+  "networkFeesIncluded": false,
+  "feePayerSelected": false,
+  "transactionsSubmitted": 0,
+  "notes": [
+    "Quote assumes exact program allocation with no growth reserve.",
+    "Conservative peak includes both upload buffer and deployed program allocation. Confirm actual loader funding flows in the final deployment plan.",
+    "After irreversible authority removal, deployed program rent cannot be reclaimed by closing the program.",
+    "Re-quote the final artifact immediately before wallet approval. No private key or default wallet is read."
+  ]
+}

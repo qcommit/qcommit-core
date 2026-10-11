@@ -1,0 +1,28 @@
+{
+  "checkedAt": "2026-10-11T04:00:59.174563+00:00",
+  "status": "passed",
+  "scope": "Offline cryptography, SDK/gateway mock tests, actual CLI creation/restore/sign, native Rust and compiled SBF; no public transactions",
+  "logs": {
+    "sdk.log": "e2afd8b15e645c992bcc9efe3b970ff4b09b444c01c870bdfffdea9fdf0bafdd",
+    "source.log": "2bf113ee2d9b9ded8a5a15fda84e5ea43dc5a26dec26614d35722f8e503a2f69",
+    "program-build.log": "8c07312aeac24cf5ea832481f06eb0a1fa66fb9aab03009d880d6ca69cf940c3",
+    "cli-identity.log": "9bdbd0d334feae23eb49dff1c37e40ee49821eefb607ce65c79cf4346951458b",
+    "vectors.log": "3929c8792c1c8c39c262f0b4ef65bbfa42e178c2c1bd3a589ed36690cf963180",
+    "signing.log": "0926459fc83cf3802cb7e0853ab5cd8dc1dedd5cb54f1fc22c64455224e7417f",
+    "gateway.log": "063ab04147ce7a77229938a02adbd51fe8915ca0f473fb22a087f8b437536ce8",
+    "application.log": "523b6d3b56fd95972a19a9c2ba1f081d17ce0b33d1b2cdd2e99f17b8b22d6696",
+    "mutations.log": "38b5ae9ff30022063bf11385ad26ca79bc7b45e08a44af26310affa0ce07406f"
+  },
+  "binarySha256": "d71c18378db12dc6e36f9864043054557ec02610dbc1accb50a3c805147ab61d",
+  "binaryBytes": 168568,
+  "testCounts": {
+    "application": 20,
+    "sdkIncludingOperator": 60,
+    "gateway": 16,
+    "cliIdentityIntegration": 4,
+    "rust": 30,
+    "sharedTextCorpus": 165,
+    "nistCasesPerIndependentVerifier": 28,
+    "mutationCases": 491
+  }
+}

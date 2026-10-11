@@ -1,0 +1,13 @@
+{
+  "checkedAt": "2026-10-11T04:05:55.106640+00:00",
+  "status": "passed",
+  "programBytes": 168568,
+  "programSha256": "d71c18378db12dc6e36f9864043054557ec02610dbc1accb50a3c805147ab61d",
+  "method": "Separate source directory and empty Cargo target/output with locked dependencies, identical host/toolchain",
+  "toolchain": {
+    "cargoBuildSbf": "3.1.10",
+    "platformTools": "v1.52",
+    "compiler": "1.89.0"
+  },
+  "scope": "Same-host clean-path byte reproducibility; not independently operated hardware or mainnet deployment"
+}
