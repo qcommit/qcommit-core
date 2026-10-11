@@ -81,9 +81,18 @@ not establish the creator's identity.
 - Token pages provide the original transaction link and downloadable receipt.
 - Pending signed launches can be resumed after a browser reload. A retry uses
   the same signed bytes; a new transaction requires a fresh review.
-- The unlisted curator page manages existing-token listings without a wallet
-  or account. Community listings are labelled separately; adding one does not
-  manufacture a Qcommit execution receipt or creator signature.
+- The unlisted curator page imports existing tokens by Solana contract address,
+  without a wallet or account. It reads on-chain metadata, public token JSON and
+  exact-mint DEX Screener pairs to fill available name, symbol, image, description,
+  website and pool fields. Missing fields stay editable; existing CAs reopen
+  their saved listing.
+- Admin shows the current Explore tokens with direct Hide from Explore controls,
+  plus a Hidden tokens list with Show in Explore. Hiding preserves the stored
+  listing and its original receipts.
+- Community imports are labelled separately; adding one does not manufacture a
+  Qcommit execution receipt or creator signature. A later genuinely confirmed
+  Qcommit launch links its receipt to an existing curated entry without making
+  a duplicate listing.
 
 Website hosting, listing storage and the Meteora transaction adapter are separate
 from this portable cryptographic package. The core remains usable offline.
