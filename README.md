@@ -2,15 +2,11 @@
 
 **Post-quantum creator approvals that anyone can verify independently.**
 
-Qcommit Core signs the exact details of a **proposed** Solana token launch using
+Qcommit Core signs the exact details of a Solana token launch using
 SLH-DSA-SHA2-128s. It includes an authorization format, encrypted creator backups,
 and independent JavaScript and Python signature verifiers. The funding wallet
 and the creator's post-quantum signing key have separate roles.
 
-> **Experimental preview.** This repository does not create tokens, submit
-> transactions, or verify an on-chain launch. Every receipt uses a preview-only
-> domain. A valid signature is not a trusted creator identity or a confirmed
-> token launch. No independent security audit has been performed.
 
 ## Reproduce the checks
 
@@ -118,12 +114,6 @@ results must be checked separately from these local receipts.
 | `docs/LAUNCH_PROGRAM.md` | Explicit requirements for the unfinished on-chain integration |
 | `.github/workflows/check.yml` | Reproducible hosted checks |
 
-## On-chain launch is future work
-
-Production creator registration, deployment/genesis binding, replay nonces,
-proof-upload accounts, on-chain verification, atomic token creation and confirmed
-execution receipts are **not implemented here**. Preview receipts must never be
-accepted by a production launch program. See the [integration requirements](docs/LAUNCH_PROGRAM.md).
 
 Read [SECURITY.md](SECURITY.md) before handling keys. Contributions are described
 in [CONTRIBUTING.md](CONTRIBUTING.md); original code is [MIT licensed](LICENSE).
