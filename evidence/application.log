@@ -1,0 +1,134 @@
+
+> @qcommit/core@0.1.0-preview.1 test
+> node --test tests/*.test.mjs
+
+TAP version 13
+# Subtest: native OpenSSL fixture verifies with all seven independent XMSS roots
+ok 1 - native OpenSSL fixture verifies with all seven independent XMSS roots
+  ---
+  duration_ms: 48.370209
+  type: 'test'
+  ...
+# Subtest: no supplied pin means valid cryptography but not a trusted creator identity
+ok 2 - no supplied pin means valid cryptography but not a trusted creator identity
+  ---
+  duration_ms: 44.289615
+  type: 'test'
+  ...
+# Subtest: wrong creator fingerprint stays separate from signature validity
+ok 3 - wrong creator fingerprint stays separate from signature validity
+  ---
+  duration_ms: 34.075738
+  type: 'test'
+  ...
+# Subtest: all mutable descriptive and numeric token fields are bound by the signature
+ok 4 - all mutable descriptive and numeric token fields are bound by the signature
+  ---
+  duration_ms: 412.662937
+  type: 'test'
+  ...
+# Subtest: a different mathematically sized key is not accepted
+ok 5 - a different mathematically sized key is not accepted
+  ---
+  duration_ms: 35.205716
+  type: 'test'
+  ...
+# Subtest: signature mutation in FORS and each hypertree layer is rejected
+ok 6 - signature mutation in FORS and each hypertree layer is rejected
+  ---
+  duration_ms: 312.663821
+  type: 'test'
+  ...
+# Subtest: context is cryptographically bound
+ok 7 - context is cryptographically bound
+  ---
+  duration_ms: 29.802279
+  type: 'test'
+  ...
+# Subtest: duplicate fields and oversized/deep JSON fail before verification
+ok 8 - duplicate fields and oversized/deep JSON fail before verification
+  ---
+  duration_ms: 1.323034
+  type: 'test'
+  ...
+# Subtest: unknown fields and unsupported production scope fail closed
+ok 9 - unknown fields and unsupported production scope fail closed
+  ---
+  duration_ms: 0.337042
+  type: 'test'
+  ...
+# Subtest: canonical serialization is independent of transport field order
+ok 10 - canonical serialization is independent of transport field order
+  ---
+  duration_ms: 2.220675
+  type: 'test'
+  ...
+# Subtest: malformed base64 and truncated signatures are rejected
+ok 11 - malformed base64 and truncated signatures are rejected
+  ---
+  duration_ms: 0.326179
+  type: 'test'
+  ...
+# Subtest: funding and recipient addresses must encode exactly 32 bytes
+ok 12 - funding and recipient addresses must encode exactly 32 bytes
+  ---
+  duration_ms: 0.173041
+  type: 'test'
+  ...
+# Subtest: exact u64 supply bounds and decimals reject unsafe coercion
+ok 13 - exact u64 supply bounds and decimals reject unsafe coercion
+  ---
+  duration_ms: 0.228786
+  type: 'test'
+  ...
+# Subtest: permissions and metadata schemas cannot silently change
+ok 14 - permissions and metadata schemas cannot silently change
+  ---
+  duration_ms: 0.142433
+  type: 'test'
+  ...
+# Subtest: expiry and future issue times are reported independently of signature validity
+ok 15 - expiry and future issue times are reported independently of signature validity
+  ---
+  duration_ms: 70.81777
+  type: 'test'
+  ...
+# Subtest: encrypted vault roundtrip preserves key bytes without plaintext storage
+ok 16 - encrypted vault roundtrip preserves key bytes without plaintext storage
+  ---
+  duration_ms: 139.995048
+  type: 'test'
+  ...
+# Subtest: incorrect passphrase and authenticated metadata edits fail vault decryption
+ok 17 - incorrect passphrase and authenticated metadata edits fail vault decryption
+  ---
+  duration_ms: 233.142442
+  type: 'test'
+  ...
+# Subtest: vault KDF cannot be downgraded or escalated by untrusted backup fields
+ok 18 - vault KDF cannot be downgraded or escalated by untrusted backup fields
+  ---
+  duration_ms: 64.27322
+  type: 'test'
+  ...
+# Subtest: a matching fingerprint never makes an invalid signature a trusted authorization
+ok 19 - a matching fingerprint never makes an invalid signature a trusted authorization
+  ---
+  duration_ms: 38.378558
+  type: 'test'
+  ...
+# Subtest: JS/Python agree on URI, whitespace and timestamp edge cases
+ok 20 - JS/Python agree on URI, whitespace and timestamp edge cases
+  ---
+  duration_ms: 29.31565
+  type: 'test'
+  ...
+1..20
+# tests 20
+# suites 0
+# pass 20
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1552.999899

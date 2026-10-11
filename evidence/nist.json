@@ -1,0 +1,179 @@
+{
+  "profile": "SLH-DSA-SHA2-128s",
+  "scope": "28 selected external pure verification comparisons per implementation; sigGen outputs verified, not regenerated; no comprehensive conformance claim",
+  "cases": [
+    {
+      "mode": "sigGen",
+      "tcId": 157,
+      "expectedValid": true,
+      "passed": true
+    },
+    {
+      "mode": "sigGen",
+      "tcId": 158,
+      "expectedValid": true,
+      "passed": true
+    },
+    {
+      "mode": "sigGen",
+      "tcId": 159,
+      "expectedValid": true,
+      "passed": true
+    },
+    {
+      "mode": "sigGen",
+      "tcId": 160,
+      "expectedValid": true,
+      "passed": true
+    },
+    {
+      "mode": "sigGen",
+      "tcId": 161,
+      "expectedValid": true,
+      "passed": true
+    },
+    {
+      "mode": "sigGen",
+      "tcId": 162,
+      "expectedValid": true,
+      "passed": true
+    },
+    {
+      "mode": "sigGen",
+      "tcId": 163,
+      "expectedValid": true,
+      "passed": true
+    },
+    {
+      "mode": "sigGen",
+      "tcId": 469,
+      "expectedValid": true,
+      "passed": true
+    },
+    {
+      "mode": "sigGen",
+      "tcId": 470,
+      "expectedValid": true,
+      "passed": true
+    },
+    {
+      "mode": "sigGen",
+      "tcId": 471,
+      "expectedValid": true,
+      "passed": true
+    },
+    {
+      "mode": "sigGen",
+      "tcId": 472,
+      "expectedValid": true,
+      "passed": true
+    },
+    {
+      "mode": "sigGen",
+      "tcId": 473,
+      "expectedValid": true,
+      "passed": true
+    },
+    {
+      "mode": "sigGen",
+      "tcId": 474,
+      "expectedValid": true,
+      "passed": true
+    },
+    {
+      "mode": "sigGen",
+      "tcId": 475,
+      "expectedValid": true,
+      "passed": true
+    },
+    {
+      "mode": "sigVer",
+      "tcId": 253,
+      "expectedValid": false,
+      "passed": true
+    },
+    {
+      "mode": "sigVer",
+      "tcId": 254,
+      "expectedValid": false,
+      "passed": true
+    },
+    {
+      "mode": "sigVer",
+      "tcId": 255,
+      "expectedValid": false,
+      "passed": true
+    },
+    {
+      "mode": "sigVer",
+      "tcId": 256,
+      "expectedValid": false,
+      "passed": true
+    },
+    {
+      "mode": "sigVer",
+      "tcId": 257,
+      "expectedValid": false,
+      "passed": true
+    },
+    {
+      "mode": "sigVer",
+      "tcId": 258,
+      "expectedValid": true,
+      "passed": true
+    },
+    {
+      "mode": "sigVer",
+      "tcId": 259,
+      "expectedValid": false,
+      "passed": true
+    },
+    {
+      "mode": "sigVer",
+      "tcId": 260,
+      "expectedValid": false,
+      "passed": true
+    },
+    {
+      "mode": "sigVer",
+      "tcId": 261,
+      "expectedValid": false,
+      "passed": true
+    },
+    {
+      "mode": "sigVer",
+      "tcId": 262,
+      "expectedValid": false,
+      "passed": true
+    },
+    {
+      "mode": "sigVer",
+      "tcId": 263,
+      "expectedValid": false,
+      "passed": true
+    },
+    {
+      "mode": "sigVer",
+      "tcId": 264,
+      "expectedValid": false,
+      "passed": true
+    },
+    {
+      "mode": "sigVer",
+      "tcId": 265,
+      "expectedValid": false,
+      "passed": true
+    },
+    {
+      "mode": "sigVer",
+      "tcId": 266,
+      "expectedValid": true,
+      "passed": true
+    }
+  ],
+  "python": {
+    "cases": 28,
+    "passed": true
+  },
+  "passed": true
+}

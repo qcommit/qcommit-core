@@ -1,0 +1,82 @@
+{
+  "at": "2026-10-11T01:47:22.991101+00:00",
+  "scope": "Local CPU-only preview core; no browser, chain transactions or deployment",
+  "phases": [
+    {
+      "name": "install",
+      "command": [
+        "npm",
+        "ci",
+        "--ignore-scripts",
+        "--no-audit",
+        "--no-fund"
+      ],
+      "exitCode": 0,
+      "seconds": 0.32
+    },
+    {
+      "name": "application",
+      "command": [
+        "npm",
+        "test"
+      ],
+      "exitCode": 0,
+      "seconds": 1.641
+    },
+    {
+      "name": "signing",
+      "command": [
+        "npm",
+        "run",
+        "test:signing"
+      ],
+      "exitCode": 0,
+      "seconds": 2.355
+    },
+    {
+      "name": "nist",
+      "command": [
+        "npm",
+        "run",
+        "test:vectors"
+      ],
+      "exitCode": 0,
+      "seconds": 1.153
+    },
+    {
+      "name": "mutations",
+      "command": [
+        "npm",
+        "run",
+        "test:mutations"
+      ],
+      "exitCode": 0,
+      "seconds": 0.997
+    },
+    {
+      "name": "release-source",
+      "command": [
+        "python3",
+        "scripts/check-source.py"
+      ],
+      "exitCode": 0,
+      "seconds": 0.021
+    }
+  ],
+  "passed": true,
+  "sourceHashes": {
+    "src/slh-verify.mjs": "9ee11f11e1308295afb534199a7ec77e0d01f0c5d69361d9f4cd0854620ac0e3",
+    "src/json.mjs": "c2392463dc6f974a408804cd475994d9a7f74d96df75591d459c1797536ff533",
+    "src/protocol.mjs": "8f93302ccb498d21d5be4a63f9f5517addc8b66ca5354a9edd4dc172bcee8ad4",
+    "src/vault.mjs": "44ece65f8e9bd0c2d31f296497e5bef277849539a7b7b70b2814b01f779e0af1",
+    "cli/slh_verify.py": "f13753baf079c420d3353e9c75ed4f73f37f66c5d1830e8667c86dd20f2b3f6a",
+    "cli/verify.py": "b53039095a4485568d9ba5fbcfb23f2568739c8043434dbd2b862ddeeaedef22",
+    "tests/make_fixture.py": "d0433f8ea06ab8a78f0fb10ca8c6f6f91ac671a6be24d80fb029f091684ea232",
+    "tests/parser_compare.py": "a8b55cabacc34f4cca530a5cd6fc0f88afec6b3510bcd632a92023032e3fd947",
+    "tests/protocol.test.mjs": "0773ac00fe6d29b64854ed2ae90b851025cd7f5addffea07c025b2f4699e35d2",
+    "tests/nist.mjs": "6c0d50a8e923dec59f3a10c9070fa2dbc2dbb70053d1cbb7b0a82a7150a1f401",
+    "tests/nist.py": "157367c4dd1cedfe5816e117a1091ab8146422683af81427033294296f70dcd8",
+    "tests/signing.integration.mjs": "20fc65f1995813de65909f347fc03d948e5dab69435d627e96108c5663fa2cc0",
+    "tests/native_mutations.py": "2a79d97d27ef3e429736513c142160ec0c84e6e8d2cad024e9f9e7258fc61719"
+  }
+}

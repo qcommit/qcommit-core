@@ -1,0 +1,25 @@
+{
+  "name": "@qcommit/core",
+  "version": "0.1.0-preview.1",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "description": "Qcommit launch-authorization protocol, encrypted creator identities, and independent verification.",
+  "engines": {
+    "node": ">=22.16.0"
+  },
+  "exports": {
+    ".": "./src/protocol.mjs",
+    "./vault": "./src/vault.mjs",
+    "./verify": "./src/slh-verify.mjs"
+  },
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "test:signing": "node tests/signing.integration.mjs",
+    "test:mutations": "python3 tests/native_mutations.py",
+    "test:vectors": "node tests/nist.mjs"
+  },
+  "dependencies": {
+    "@noble/post-quantum": "0.7.1"
+  }
+}

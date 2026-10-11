@@ -1,0 +1,65 @@
+{
+  "profile": "SLH-DSA-SHA2-128s",
+  "scope": "28 published external pure SHA2-128s signatures checked by independent JS/Python verification. sigGen outputs verified, not independently regenerated.",
+  "nistSources": [
+    {
+      "mode": "sigGen",
+      "commit": "975de31eb83d87039ec88934fdc47d8c312b892d",
+      "url": "https://raw.githubusercontent.com/usnistgov/ACVP-Server/975de31eb83d87039ec88934fdc47d8c312b892d/gen-val/json-files/SLH-DSA-sigGen-FIPS205/internalProjection.json",
+      "fullFileSha256": "62b42e7c27fda5de8a94aba2943ae413b59b6ea08141f3bc035b1eceae235dba",
+      "fullGitBlobSha1": "5ff182bc29ae00b02a219cf68fff370d9963a12c",
+      "fullBytes": 38178342,
+      "subsetSha256": "1ae0b164befc54a41fe38723e09664704001e5e390fe1ec8ac01781747c96c91",
+      "subsetBytes": 328059,
+      "groups": [
+        19,
+        55
+      ],
+      "caseIds": [
+        157,
+        158,
+        159,
+        160,
+        161,
+        162,
+        163,
+        469,
+        470,
+        471,
+        472,
+        473,
+        474,
+        475
+      ]
+    },
+    {
+      "mode": "sigVer",
+      "commit": "975de31eb83d87039ec88934fdc47d8c312b892d",
+      "url": "https://raw.githubusercontent.com/usnistgov/ACVP-Server/975de31eb83d87039ec88934fdc47d8c312b892d/gen-val/json-files/SLH-DSA-sigVer-FIPS205/internalProjection.json",
+      "fullFileSha256": "a013fc2104f4ed4799d96d51141f65b965969b2cf10646626a021b6d456ce792",
+      "fullGitBlobSha1": "0805107118f6d2c171f15b005e0b2bb0ec1ddcc1",
+      "fullBytes": 30731848,
+      "subsetSha256": "c4e3f4454912282d110e3ab5cb081bd794c2844cba2b90879e071df88822b8e5",
+      "subsetBytes": 339696,
+      "groups": [
+        19
+      ],
+      "caseIds": [
+        253,
+        254,
+        255,
+        256,
+        257,
+        258,
+        259,
+        260,
+        261,
+        262,
+        263,
+        264,
+        265,
+        266
+      ]
+    }
+  ]
+}

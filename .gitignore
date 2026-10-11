@@ -1,0 +1,11 @@
+node_modules/
+.runtime/
+__pycache__/
+*.pyc
+*.encrypted.json
+*.keystore.json
+*.pem
+*.key
+.env
+.env.*
+dist/

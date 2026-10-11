@@ -1,0 +1,5 @@
+
+> @qcommit/core@0.1.0-preview.1 test:vectors
+> node tests/nist.mjs
+
+28 published signatures checked by independent JS and Python.

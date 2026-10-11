@@ -1,0 +1,12 @@
+
+> @qcommit/core@0.1.0-preview.1 test:mutations
+> python3 tests/native_mutations.py
+
+{
+  "status": "passed",
+  "cases": 491,
+  "componentBytes": 16,
+  "fixture": "OpenSSL-generated reference; not NIST corpus",
+  "scope": "one altered byte per signature component; independent Python verifier",
+  "onchainTests": 0
+}

@@ -1,0 +1,5 @@
+
+> @qcommit/core@0.1.0-preview.1 test:signing
+> node tests/signing.integration.mjs
+
+Noble signing → encrypted backup → independent JS and Python verification passed (2 receipts).
