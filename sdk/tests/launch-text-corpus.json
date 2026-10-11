@@ -1,0 +1,995 @@
+{
+  "scope": "Shared production codec validation cases; plain public values; no key material",
+  "cases": [
+    {
+      "id": "name-control-U0000",
+      "field": "name",
+      "value": "A\u0000B",
+      "valid": false
+    },
+    {
+      "id": "name-control-U0001",
+      "field": "name",
+      "value": "A\u0001B",
+      "valid": false
+    },
+    {
+      "id": "name-control-U0002",
+      "field": "name",
+      "value": "A\u0002B",
+      "valid": false
+    },
+    {
+      "id": "name-control-U0003",
+      "field": "name",
+      "value": "A\u0003B",
+      "valid": false
+    },
+    {
+      "id": "name-control-U0004",
+      "field": "name",
+      "value": "A\u0004B",
+      "valid": false
+    },
+    {
+      "id": "name-control-U0005",
+      "field": "name",
+      "value": "A\u0005B",
+      "valid": false
+    },
+    {
+      "id": "name-control-U0006",
+      "field": "name",
+      "value": "A\u0006B",
+      "valid": false
+    },
+    {
+      "id": "name-control-U0007",
+      "field": "name",
+      "value": "A\u0007B",
+      "valid": false
+    },
+    {
+      "id": "name-control-U0008",
+      "field": "name",
+      "value": "A\bB",
+      "valid": false
+    },
+    {
+      "id": "name-control-U0009",
+      "field": "name",
+      "value": "A\tB",
+      "valid": false
+    },
+    {
+      "id": "name-control-U000A",
+      "field": "name",
+      "value": "A\nB",
+      "valid": false
+    },
+    {
+      "id": "name-control-U000B",
+      "field": "name",
+      "value": "A\u000bB",
+      "valid": false
+    },
+    {
+      "id": "name-control-U000C",
+      "field": "name",
+      "value": "A\fB",
+      "valid": false
+    },
+    {
+      "id": "name-control-U000D",
+      "field": "name",
+      "value": "A\rB",
+      "valid": false
+    },
+    {
+      "id": "name-control-U000E",
+      "field": "name",
+      "value": "A\u000eB",
+      "valid": false
+    },
+    {
+      "id": "name-control-U000F",
+      "field": "name",
+      "value": "A\u000fB",
+      "valid": false
+    },
+    {
+      "id": "name-control-U0010",
+      "field": "name",
+      "value": "A\u0010B",
+      "valid": false
+    },
+    {
+      "id": "name-control-U0011",
+      "field": "name",
+      "value": "A\u0011B",
+      "valid": false
+    },
+    {
+      "id": "name-control-U0012",
+      "field": "name",
+      "value": "A\u0012B",
+      "valid": false
+    },
+    {
+      "id": "name-control-U0013",
+      "field": "name",
+      "value": "A\u0013B",
+      "valid": false
+    },
+    {
+      "id": "name-control-U0014",
+      "field": "name",
+      "value": "A\u0014B",
+      "valid": false
+    },
+    {
+      "id": "name-control-U0015",
+      "field": "name",
+      "value": "A\u0015B",
+      "valid": false
+    },
+    {
+      "id": "name-control-U0016",
+      "field": "name",
+      "value": "A\u0016B",
+      "valid": false
+    },
+    {
+      "id": "name-control-U0017",
+      "field": "name",
+      "value": "A\u0017B",
+      "valid": false
+    },
+    {
+      "id": "name-control-U0018",
+      "field": "name",
+      "value": "A\u0018B",
+      "valid": false
+    },
+    {
+      "id": "name-control-U0019",
+      "field": "name",
+      "value": "A\u0019B",
+      "valid": false
+    },
+    {
+      "id": "name-control-U001A",
+      "field": "name",
+      "value": "A\u001aB",
+      "valid": false
+    },
+    {
+      "id": "name-control-U001B",
+      "field": "name",
+      "value": "A\u001bB",
+      "valid": false
+    },
+    {
+      "id": "name-control-U001C",
+      "field": "name",
+      "value": "A\u001cB",
+      "valid": false
+    },
+    {
+      "id": "name-control-U001D",
+      "field": "name",
+      "value": "A\u001dB",
+      "valid": false
+    },
+    {
+      "id": "name-control-U001E",
+      "field": "name",
+      "value": "A\u001eB",
+      "valid": false
+    },
+    {
+      "id": "name-control-U001F",
+      "field": "name",
+      "value": "A\u001fB",
+      "valid": false
+    },
+    {
+      "id": "name-control-U007F",
+      "field": "name",
+      "value": "A\u007fB",
+      "valid": false
+    },
+    {
+      "id": "name-control-U0080",
+      "field": "name",
+      "value": "A\u0080B",
+      "valid": false
+    },
+    {
+      "id": "name-control-U0081",
+      "field": "name",
+      "value": "A\u0081B",
+      "valid": false
+    },
+    {
+      "id": "name-control-U0082",
+      "field": "name",
+      "value": "A\u0082B",
+      "valid": false
+    },
+    {
+      "id": "name-control-U0083",
+      "field": "name",
+      "value": "A\u0083B",
+      "valid": false
+    },
+    {
+      "id": "name-control-U0084",
+      "field": "name",
+      "value": "A\u0084B",
+      "valid": false
+    },
+    {
+      "id": "name-control-U0085",
+      "field": "name",
+      "value": "A\u0085B",
+      "valid": false
+    },
+    {
+      "id": "name-control-U0086",
+      "field": "name",
+      "value": "A\u0086B",
+      "valid": false
+    },
+    {
+      "id": "name-control-U0087",
+      "field": "name",
+      "value": "A\u0087B",
+      "valid": false
+    },
+    {
+      "id": "name-control-U0088",
+      "field": "name",
+      "value": "A\u0088B",
+      "valid": false
+    },
+    {
+      "id": "name-control-U0089",
+      "field": "name",
+      "value": "A\u0089B",
+      "valid": false
+    },
+    {
+      "id": "name-control-U008A",
+      "field": "name",
+      "value": "A\u008aB",
+      "valid": false
+    },
+    {
+      "id": "name-control-U008B",
+      "field": "name",
+      "value": "A\u008bB",
+      "valid": false
+    },
+    {
+      "id": "name-control-U008C",
+      "field": "name",
+      "value": "A\u008cB",
+      "valid": false
+    },
+    {
+      "id": "name-control-U008D",
+      "field": "name",
+      "value": "A\u008dB",
+      "valid": false
+    },
+    {
+      "id": "name-control-U008E",
+      "field": "name",
+      "value": "A\u008eB",
+      "valid": false
+    },
+    {
+      "id": "name-control-U008F",
+      "field": "name",
+      "value": "A\u008fB",
+      "valid": false
+    },
+    {
+      "id": "name-control-U0090",
+      "field": "name",
+      "value": "A\u0090B",
+      "valid": false
+    },
+    {
+      "id": "name-control-U0091",
+      "field": "name",
+      "value": "A\u0091B",
+      "valid": false
+    },
+    {
+      "id": "name-control-U0092",
+      "field": "name",
+      "value": "A\u0092B",
+      "valid": false
+    },
+    {
+      "id": "name-control-U0093",
+      "field": "name",
+      "value": "A\u0093B",
+      "valid": false
+    },
+    {
+      "id": "name-control-U0094",
+      "field": "name",
+      "value": "A\u0094B",
+      "valid": false
+    },
+    {
+      "id": "name-control-U0095",
+      "field": "name",
+      "value": "A\u0095B",
+      "valid": false
+    },
+    {
+      "id": "name-control-U0096",
+      "field": "name",
+      "value": "A\u0096B",
+      "valid": false
+    },
+    {
+      "id": "name-control-U0097",
+      "field": "name",
+      "value": "A\u0097B",
+      "valid": false
+    },
+    {
+      "id": "name-control-U0098",
+      "field": "name",
+      "value": "A\u0098B",
+      "valid": false
+    },
+    {
+      "id": "name-control-U0099",
+      "field": "name",
+      "value": "A\u0099B",
+      "valid": false
+    },
+    {
+      "id": "name-control-U009A",
+      "field": "name",
+      "value": "A\u009aB",
+      "valid": false
+    },
+    {
+      "id": "name-control-U009B",
+      "field": "name",
+      "value": "A\u009bB",
+      "valid": false
+    },
+    {
+      "id": "name-control-U009C",
+      "field": "name",
+      "value": "A\u009cB",
+      "valid": false
+    },
+    {
+      "id": "name-control-U009D",
+      "field": "name",
+      "value": "A\u009dB",
+      "valid": false
+    },
+    {
+      "id": "name-control-U009E",
+      "field": "name",
+      "value": "A\u009eB",
+      "valid": false
+    },
+    {
+      "id": "name-control-U009F",
+      "field": "name",
+      "value": "A\u009fB",
+      "valid": false
+    },
+    {
+      "id": "name-prefix-space-U0020",
+      "field": "name",
+      "value": " Name",
+      "valid": false
+    },
+    {
+      "id": "name-suffix-space-U0020",
+      "field": "name",
+      "value": "Name ",
+      "valid": false
+    },
+    {
+      "id": "name-prefix-space-U00A0",
+      "field": "name",
+      "value": "\u00a0Name",
+      "valid": false
+    },
+    {
+      "id": "name-suffix-space-U00A0",
+      "field": "name",
+      "value": "Name\u00a0",
+      "valid": false
+    },
+    {
+      "id": "name-prefix-space-U1680",
+      "field": "name",
+      "value": "\u1680Name",
+      "valid": false
+    },
+    {
+      "id": "name-suffix-space-U1680",
+      "field": "name",
+      "value": "Name\u1680",
+      "valid": false
+    },
+    {
+      "id": "name-prefix-space-U2000",
+      "field": "name",
+      "value": "\u2000Name",
+      "valid": false
+    },
+    {
+      "id": "name-suffix-space-U2000",
+      "field": "name",
+      "value": "Name\u2000",
+      "valid": false
+    },
+    {
+      "id": "name-prefix-space-U2001",
+      "field": "name",
+      "value": "\u2001Name",
+      "valid": false
+    },
+    {
+      "id": "name-suffix-space-U2001",
+      "field": "name",
+      "value": "Name\u2001",
+      "valid": false
+    },
+    {
+      "id": "name-prefix-space-U2002",
+      "field": "name",
+      "value": "\u2002Name",
+      "valid": false
+    },
+    {
+      "id": "name-suffix-space-U2002",
+      "field": "name",
+      "value": "Name\u2002",
+      "valid": false
+    },
+    {
+      "id": "name-prefix-space-U2003",
+      "field": "name",
+      "value": "\u2003Name",
+      "valid": false
+    },
+    {
+      "id": "name-suffix-space-U2003",
+      "field": "name",
+      "value": "Name\u2003",
+      "valid": false
+    },
+    {
+      "id": "name-prefix-space-U2004",
+      "field": "name",
+      "value": "\u2004Name",
+      "valid": false
+    },
+    {
+      "id": "name-suffix-space-U2004",
+      "field": "name",
+      "value": "Name\u2004",
+      "valid": false
+    },
+    {
+      "id": "name-prefix-space-U2005",
+      "field": "name",
+      "value": "\u2005Name",
+      "valid": false
+    },
+    {
+      "id": "name-suffix-space-U2005",
+      "field": "name",
+      "value": "Name\u2005",
+      "valid": false
+    },
+    {
+      "id": "name-prefix-space-U2006",
+      "field": "name",
+      "value": "\u2006Name",
+      "valid": false
+    },
+    {
+      "id": "name-suffix-space-U2006",
+      "field": "name",
+      "value": "Name\u2006",
+      "valid": false
+    },
+    {
+      "id": "name-prefix-space-U2007",
+      "field": "name",
+      "value": "\u2007Name",
+      "valid": false
+    },
+    {
+      "id": "name-suffix-space-U2007",
+      "field": "name",
+      "value": "Name\u2007",
+      "valid": false
+    },
+    {
+      "id": "name-prefix-space-U2008",
+      "field": "name",
+      "value": "\u2008Name",
+      "valid": false
+    },
+    {
+      "id": "name-suffix-space-U2008",
+      "field": "name",
+      "value": "Name\u2008",
+      "valid": false
+    },
+    {
+      "id": "name-prefix-space-U2009",
+      "field": "name",
+      "value": "\u2009Name",
+      "valid": false
+    },
+    {
+      "id": "name-suffix-space-U2009",
+      "field": "name",
+      "value": "Name\u2009",
+      "valid": false
+    },
+    {
+      "id": "name-prefix-space-U200A",
+      "field": "name",
+      "value": "\u200aName",
+      "valid": false
+    },
+    {
+      "id": "name-suffix-space-U200A",
+      "field": "name",
+      "value": "Name\u200a",
+      "valid": false
+    },
+    {
+      "id": "name-prefix-space-U2028",
+      "field": "name",
+      "value": "\u2028Name",
+      "valid": false
+    },
+    {
+      "id": "name-suffix-space-U2028",
+      "field": "name",
+      "value": "Name\u2028",
+      "valid": false
+    },
+    {
+      "id": "name-prefix-space-U2029",
+      "field": "name",
+      "value": "\u2029Name",
+      "valid": false
+    },
+    {
+      "id": "name-suffix-space-U2029",
+      "field": "name",
+      "value": "Name\u2029",
+      "valid": false
+    },
+    {
+      "id": "name-prefix-space-U202F",
+      "field": "name",
+      "value": "\u202fName",
+      "valid": false
+    },
+    {
+      "id": "name-suffix-space-U202F",
+      "field": "name",
+      "value": "Name\u202f",
+      "valid": false
+    },
+    {
+      "id": "name-prefix-space-U205F",
+      "field": "name",
+      "value": "\u205fName",
+      "valid": false
+    },
+    {
+      "id": "name-suffix-space-U205F",
+      "field": "name",
+      "value": "Name\u205f",
+      "valid": false
+    },
+    {
+      "id": "name-prefix-space-U3000",
+      "field": "name",
+      "value": "\u3000Name",
+      "valid": false
+    },
+    {
+      "id": "name-suffix-space-U3000",
+      "field": "name",
+      "value": "Name\u3000",
+      "valid": false
+    },
+    {
+      "id": "name-prefix-space-UFEFF",
+      "field": "name",
+      "value": "\ufeffName",
+      "valid": false
+    },
+    {
+      "id": "name-suffix-space-UFEFF",
+      "field": "name",
+      "value": "Name\ufeff",
+      "valid": false
+    },
+    {
+      "id": "name-ordinary",
+      "field": "name",
+      "value": "Name",
+      "valid": true
+    },
+    {
+      "id": "name-unicode",
+      "field": "name",
+      "value": "\u6771\u4eac",
+      "valid": true
+    },
+    {
+      "id": "name-32-UTF8-bytes",
+      "field": "name",
+      "value": "\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9",
+      "valid": true
+    },
+    {
+      "id": "name-34-UTF8-bytes",
+      "field": "name",
+      "value": "\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9",
+      "valid": false
+    },
+    {
+      "id": "name-internal-BOM-preserved",
+      "field": "name",
+      "value": "A\ufeffB",
+      "valid": true
+    },
+    {
+      "id": "name-internal-space-preserved",
+      "field": "name",
+      "value": "A\u2000B",
+      "valid": true
+    },
+    {
+      "id": "name-empty",
+      "field": "name",
+      "value": "",
+      "valid": false
+    },
+    {
+      "id": "symbol-Q1",
+      "field": "symbol",
+      "value": "Q1",
+      "valid": true
+    },
+    {
+      "id": "symbol-lower",
+      "field": "symbol",
+      "value": "lower",
+      "valid": false
+    },
+    {
+      "id": "symbol-\u00c9",
+      "field": "symbol",
+      "value": "\u00c9",
+      "valid": false
+    },
+    {
+      "id": "symbol-1234567890",
+      "field": "symbol",
+      "value": "1234567890",
+      "valid": true
+    },
+    {
+      "id": "symbol-12345678901",
+      "field": "symbol",
+      "value": "12345678901",
+      "valid": false
+    },
+    {
+      "id": "uri-valid-0",
+      "field": "metadataUri",
+      "value": "https://example.com/a.json",
+      "valid": true
+    },
+    {
+      "id": "uri-valid-1",
+      "field": "metadataUri",
+      "value": "https://EXAMPLE.com:443/a/../b?x=%2F#part",
+      "valid": true
+    },
+    {
+      "id": "uri-valid-2",
+      "field": "metadataUri",
+      "value": "https://example.com./x",
+      "valid": true
+    },
+    {
+      "id": "uri-valid-3",
+      "field": "metadataUri",
+      "value": "https://localhost/x",
+      "valid": true
+    },
+    {
+      "id": "uri-valid-4",
+      "field": "metadataUri",
+      "value": "https://0.0.0.0/a",
+      "valid": true
+    },
+    {
+      "id": "uri-valid-5",
+      "field": "metadataUri",
+      "value": "https://255.255.255.255:65535/a",
+      "valid": true
+    },
+    {
+      "id": "uri-valid-6",
+      "field": "metadataUri",
+      "value": "https://xn--bcher-kva.example/%E6%9D%B1%E4%BA%AC.json",
+      "valid": true
+    },
+    {
+      "id": "uri-valid-7",
+      "field": "metadataUri",
+      "value": "ipfs://bafyExample/metadata.json",
+      "valid": true
+    },
+    {
+      "id": "uri-valid-8",
+      "field": "metadataUri",
+      "value": "ar://a_-0/b.json",
+      "valid": true
+    },
+    {
+      "id": "uri-valid-9",
+      "field": "metadataUri",
+      "value": "https://example.com/%00",
+      "valid": true
+    },
+    {
+      "id": "uri-valid-10",
+      "field": "metadataUri",
+      "value": "https://x/uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu",
+      "valid": true
+    },
+    {
+      "id": "uri-invalid-0",
+      "field": "metadataUri",
+      "value": "http://example.com/a",
+      "valid": false
+    },
+    {
+      "id": "uri-invalid-1",
+      "field": "metadataUri",
+      "value": "HTTPS://example.com/a",
+      "valid": false
+    },
+    {
+      "id": "uri-invalid-2",
+      "field": "metadataUri",
+      "value": "https://",
+      "valid": false
+    },
+    {
+      "id": "uri-invalid-3",
+      "field": "metadataUri",
+      "value": "https:///x",
+      "valid": false
+    },
+    {
+      "id": "uri-invalid-4",
+      "field": "metadataUri",
+      "value": "https://user:pass@example.com/a",
+      "valid": false
+    },
+    {
+      "id": "uri-invalid-5",
+      "field": "metadataUri",
+      "value": "https://example.com:0/a",
+      "valid": false
+    },
+    {
+      "id": "uri-invalid-6",
+      "field": "metadataUri",
+      "value": "https://example.com:00080/a",
+      "valid": false
+    },
+    {
+      "id": "uri-invalid-7",
+      "field": "metadataUri",
+      "value": "https://example.com:65536/a",
+      "valid": false
+    },
+    {
+      "id": "uri-invalid-8",
+      "field": "metadataUri",
+      "value": "https://example.com:80:90/a",
+      "valid": false
+    },
+    {
+      "id": "uri-invalid-9",
+      "field": "metadataUri",
+      "value": "https://example.com:/a",
+      "valid": false
+    },
+    {
+      "id": "uri-invalid-10",
+      "field": "metadataUri",
+      "value": "https://[::1]/a",
+      "valid": false
+    },
+    {
+      "id": "uri-invalid-11",
+      "field": "metadataUri",
+      "value": "https://-bad.example/a",
+      "valid": false
+    },
+    {
+      "id": "uri-invalid-12",
+      "field": "metadataUri",
+      "value": "https://bad-.example/a",
+      "valid": false
+    },
+    {
+      "id": "uri-invalid-13",
+      "field": "metadataUri",
+      "value": "https://a..example/a",
+      "valid": false
+    },
+    {
+      "id": "uri-invalid-14",
+      "field": "metadataUri",
+      "value": "https://010.0.0.1/a",
+      "valid": false
+    },
+    {
+      "id": "uri-invalid-15",
+      "field": "metadataUri",
+      "value": "https://256.0.0.1/a",
+      "valid": false
+    },
+    {
+      "id": "uri-invalid-16",
+      "field": "metadataUri",
+      "value": "https://127.1/a",
+      "valid": false
+    },
+    {
+      "id": "uri-invalid-17",
+      "field": "metadataUri",
+      "value": "https://2130706433/a",
+      "valid": false
+    },
+    {
+      "id": "uri-invalid-18",
+      "field": "metadataUri",
+      "value": "https://0x7f000001/a",
+      "valid": false
+    },
+    {
+      "id": "uri-invalid-19",
+      "field": "metadataUri",
+      "value": "https://127.0.0.0x1/a",
+      "valid": false
+    },
+    {
+      "id": "uri-invalid-20",
+      "field": "metadataUri",
+      "value": "https://example.com/a b",
+      "valid": false
+    },
+    {
+      "id": "uri-invalid-21",
+      "field": "metadataUri",
+      "value": "https://example.com/a\\b",
+      "valid": false
+    },
+    {
+      "id": "uri-invalid-22",
+      "field": "metadataUri",
+      "value": "https://example.com/%",
+      "valid": false
+    },
+    {
+      "id": "uri-invalid-23",
+      "field": "metadataUri",
+      "value": "https://example.com/%2",
+      "valid": false
+    },
+    {
+      "id": "uri-invalid-24",
+      "field": "metadataUri",
+      "value": "https://example.com/%GG",
+      "valid": false
+    },
+    {
+      "id": "uri-invalid-25",
+      "field": "metadataUri",
+      "value": "https://example.com/<x>",
+      "valid": false
+    },
+    {
+      "id": "uri-invalid-26",
+      "field": "metadataUri",
+      "value": "https://example.com/\"x\"",
+      "valid": false
+    },
+    {
+      "id": "uri-invalid-27",
+      "field": "metadataUri",
+      "value": "https://example.com/\u6771\u4eac",
+      "valid": false
+    },
+    {
+      "id": "uri-invalid-28",
+      "field": "metadataUri",
+      "value": "https://b\u00fccher.example/a",
+      "valid": false
+    },
+    {
+      "id": "uri-invalid-29",
+      "field": "metadataUri",
+      "value": "https://example.com/\ufeffx",
+      "valid": false
+    },
+    {
+      "id": "uri-invalid-30",
+      "field": "metadataUri",
+      "value": "https://example.com/\u0085x",
+      "valid": false
+    },
+    {
+      "id": "uri-invalid-31",
+      "field": "metadataUri",
+      "value": "ipfs://",
+      "valid": false
+    },
+    {
+      "id": "uri-invalid-32",
+      "field": "metadataUri",
+      "value": "ipfs:///x",
+      "valid": false
+    },
+    {
+      "id": "uri-invalid-33",
+      "field": "metadataUri",
+      "value": "ipfs://user@bafy/x",
+      "valid": false
+    },
+    {
+      "id": "uri-invalid-34",
+      "field": "metadataUri",
+      "value": "ar://",
+      "valid": false
+    },
+    {
+      "id": "uri-invalid-35",
+      "field": "metadataUri",
+      "value": "https://xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.example/a",
+      "valid": false
+    },
+    {
+      "id": "uri-invalid-36",
+      "field": "metadataUri",
+      "value": "https://x/uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu",
+      "valid": false
+    }
+  ]
+}

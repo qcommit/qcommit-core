@@ -1,0 +1,10 @@
+{
+  "implementation": "Qcommit launch program v1, original launch/account/metadata policy with adapted account-allocation and staged-verifier integration patterns",
+  "adaptedFrom": {
+    "project": "Quantum Seal Wallet",
+    "file": "programs/seal-wallet/src/lib.rs",
+    "sha256": "b604bc4d4b75b2acb696016f29bddf378353838b7cae89eb2577a90589f3d413",
+    "license": "QUANTUM-SEAL-LICENSE"
+  },
+  "verifier": "../../crates/slh-verify/PROVENANCE.json"
+}

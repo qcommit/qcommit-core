@@ -1,0 +1,19 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {PublicKey,Keypair} from '@solana/web3.js';
+import {sha256} from '@noble/hashes/sha2.js';
+import * as c from '../codec.mjs';
+import {openNetwork} from '../network.mjs';
+import {prepareLaunch,prepareRegistration} from '../client.mjs';
+const key=n=>Keypair.fromSeed(new Uint8Array(32).fill(n)).publicKey;
+async function fixture(active=true){const program=key(21),payer=key(22),genesis=key(23),creatorPublicKey='24'.repeat(32),deploymentId='25'.repeat(32),config={format:'qcommit/network/1',cluster:'localnet',rpc:'http://127.0.0.1:18897',genesis:genesis.toBase58(),program:program.toBase58(),programSha256:c.hex(sha256(Uint8Array.of(1,2,3))),programSize:3,upgradeAuthority:null,deploymentId},salt=c.defaultCreatorSalt(config,payer,creatorPublicKey),creator=c.deriveCreator(program,genesis,deploymentId,payer,creatorPublicKey,salt),configuration=c.deriveConfig(program);
+ const configBytes=c.concat(c.utf8('QCCONF01'),Uint8Array.of(configuration.bump),genesis.toBytes(),c.raw(deploymentId),payer.toBytes());
+ const creatorBytes=c.concat(c.utf8('QCCREA01'),Uint8Array.of(creator.bump),configuration.config.toBytes(),creator.id,payer.toBytes(),c.raw(creatorPublicKey),salt,c.u64(0),Uint8Array.of(active?1:0));
+ const connection={rpcEndpoint:config.rpc,getGenesisHash:async()=>config.genesis,getAccountInfo:async id=>{if(id.equals(program))return{executable:true,owner:new PublicKey('BPFLoader2111111111111111111111111111111111'),data:Uint8Array.of(1,2,3)};if(id.equals(configuration.config))return{executable:false,owner:program,data:configBytes};if(id.equals(creator.creator))return{executable:false,owner:program,data:creatorBytes};return null;},getSlot:async()=>100,getMinimumBalanceForRentExemption:async n=>1000+n,getLatestBlockhash:async()=>({blockhash:genesis.toBase58(),lastValidBlockHeight:999}),getFeeForMessage:async()=>({value:5000})};
+ return{network:await openNetwork(config,connection),options:{payer:payer.toBase58(),creatorPublicKey,name:'Example',symbol:'EX',metadataUri:'https://example.com/x',metadataSha256:'26'.repeat(32),decimals:6,supplyBaseUnits:'1000000',maxRentLamports:'100000000',maxFeeLamports:'10000000'}};
+}
+test('launch estimates exact metadata protocol fee separately inside execution cap',async()=>{const{network,options}=await fixture();const p=await prepareLaunch(network,options);assert.equal(p.estimate.metadataFeeLamports,String(1000+1308+5440));assert.equal(p.estimate.executionRentLamports,String(4000+82+165+679+1536+1000+1308+5440));assert.equal(p.intent.maxNetworkFee,'10000000');assert.equal(p.intent.maxExecutionRent,'100000000');});
+test('fee/rent cap insufficient rejects before creator signs',async()=>{const{network,options}=await fixture();await assert.rejects(prepareLaunch(network,{...options,maxRentLamports:'1000'}),/caps/);await assert.rejects(prepareLaunch(network,{...options,maxFeeLamports:'1'}),/caps/);});
+test('inactive creator cannot prepare a launch',async()=>{const{network,options}=await fixture(false);await assert.rejects(prepareLaunch(network,options),/activate/);});
+test('registration uses deterministic public salt and separately scoped digest',async()=>{const{network,options}=await fixture(false);const p=await prepareRegistration(network,options);assert.equal(p.registration.salt,c.hex(c.defaultCreatorSalt(network,options.payer,options.creatorPublicKey)));assert.equal(p.context,c.CONTEXT);assert.equal(p.active,false);assert.equal(p.estimate.transactionCount,23);assert.throws(()=>c.registrationDigest({...p.registration,uncommittedLabel:'ignored'}));assert.throws(()=>c.registrationDigest({...p.registration,creator:key(30).toBase58()}));});
+test('expiry must be current and bounded',async()=>{const{network,options}=await fixture();await assert.rejects(prepareLaunch(network,{...options,expirySlot:'99'}));await assert.rejects(prepareLaunch(network,{...options,expirySlot:'216101'}));});

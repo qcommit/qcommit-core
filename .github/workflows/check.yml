@@ -20,4 +20,16 @@ jobs:
       - run: npm run test:signing
       - run: npm run test:vectors
       - run: npm run test:mutations
+      - run: npm run test:sdk
+      - run: node --test server/tests/*.test.mjs
+      - run: node sdk/tests/cli-identity.integration.mjs
       - run: python3 scripts/check-source.py
+  native-program:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - run: rustup toolchain install 1.89.0 --profile minimal
+      - run: cargo +1.89.0 test --workspace --release --locked
+        env:
+          CARGO_BUILD_JOBS: '2'

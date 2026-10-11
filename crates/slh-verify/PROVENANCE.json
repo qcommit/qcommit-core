@@ -1,0 +1,7 @@
+{
+  "source": "Quantum Seal Wallet MIT implementation",
+  "path": "crates/slh-verify/src/lib.rs",
+  "sha256": "e4169e4b13f110057c100671c4bcf432ab1856a1ff221f24759bc99c508af2ae",
+  "copiedUnmodified": true,
+  "license": "LICENSE"
+}

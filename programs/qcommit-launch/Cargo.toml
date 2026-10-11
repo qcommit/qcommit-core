@@ -1,0 +1,20 @@
+[package]
+name = "qcommit-launch"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+[lib]
+crate-type = ["cdylib", "rlib"]
+[features]
+no-entrypoint = []
+custom-heap = []
+custom-panic = []
+[dependencies]
+borsh.workspace = true
+solana-program.workspace = true
+solana-system-interface.workspace = true
+seal-slh-verify = { path = "../../crates/slh-verify" }
+qcommit-launch-core = { path = "../../crates/launch-core" }
+[lints.rust]
+unexpected_cfgs = { level = "warn", check-cfg = ['cfg(target_os, values("solana"))'] }
