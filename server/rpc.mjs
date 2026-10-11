@@ -332,7 +332,7 @@ function validateRead(method, p) {
       throw new GatewayError("RPC method is not enabled.", 403);
   }
 }
-function validatePayload(v, config) {
+async function validatePayload(v, config) {
   shape(v, ["jsonrpc", "id", "method", "params"]);
   requireThat(
     v.jsonrpc === "2.0" &&
@@ -354,9 +354,10 @@ function validatePayload(v, config) {
       503,
     );
     length(p, 1, 2);
-    validateLaunchTransaction(p[0], config.expectedProgram, {
+    await (config.transactionValidator ?? validateLaunchTransaction)(p[0], config.expectedProgram, {
       allowUnsigned:
         v.method === "simulateTransaction" && p[1]?.sigVerify === false,
+      signal: config.signal,
     });
     const opts = p[1] ?? {};
     shape(
@@ -415,7 +416,7 @@ async function boundedBody(body, limit, signal) {
   const reader = body.getReader();
   let total = 0,
     parts = [];
-  const aborted = () => reader.cancel("deadline");
+  const aborted = () => { void reader.cancel("deadline").catch(() => {}); };
   signal?.addEventListener("abort", aborted, { once: true });
   try {
     while (true) {
@@ -467,7 +468,7 @@ function rateLimit(origin) {
 }
 export async function handleRpc(
   request,
-  { upstream, expectedProgram, enabled = false, allowedOrigin, onDiagnostic },
+  { upstream, expectedProgram, enabled = false, allowedOrigin, onDiagnostic, transactionValidator },
   fetchImpl = (url, options) => globalThis.fetch(url, options),
 ) {
   let id = null,
@@ -525,7 +526,7 @@ export async function handleRpc(
       }
       requireThat(!Array.isArray(value), "JSON-RPC batches are disabled.");
       id = value?.id ?? null;
-      validatePayload(value, { enabled, expectedProgram });
+      await validatePayload(value, { enabled, expectedProgram, transactionValidator, signal: controller.signal });
       stage = "fetch-upstream";
       const response = await fetchImpl.call(globalThis, selected.href, {
         method: "POST",

@@ -7,11 +7,13 @@ that pays transaction costs. Its launch program verifies the creator's exact
 approval on chain, then atomically creates a fixed-supply SPL token, distributes
 its supply, revokes mint authority and creates immutable Metaplex metadata.
 
-**Current status:** the program, SDK and transaction flow have executed on an
-isolated local validator with synthetic funds. A public mainnet deployment,
-genuine Phantom-extension acceptance run and independent security audit remain
-pending. A mainnet-capable configuration interface is not evidence of a deployed
-or reviewed mainnet service. No mainnet program address is advertised here.
+**Current status:** the program, creator/launch flow and complete wallet-signed
+native deployment have executed on an isolated validator with synthetic funds.
+The deployment rehearsal includes upload, native deployment, configuration,
+separate immutable finalization and a token launch. The browser operator console
+has also completed real read-only mainnet cost/state checks. A funded mainnet
+deployment, genuine Phantom-extension acceptance run and independent security
+audit remain pending. No mainnet program address is advertised here.
 
 Qcommit protects **creator launch authorization**. Tokens created by the program
 are ordinary SPL tokens: their holders' transfers, funding-wallet signatures and
@@ -23,7 +25,9 @@ Solana itself retain their existing authorization and security models.
 | --- | --- |
 | Creator identity | A payer/key/deployment-bound creator PDA; activation requires an actual on-chain post-quantum possession proof |
 | Production approval | Canonical binary intent and `Qcommit.Launch.v1` signature context, separate from historical preview receipts |
-| Deployment binding | Actual RPC genesis, program identity, deployed binary hash/length, configuration and upgrade policy checks |
+| Wallet-signed deployment | Public wallet-derived program/buffer accounts, exact reviewed binary upload, bounded signing batches and separate irreversible finalization; no deployment private keys |
+| Deployment binding | Actual genesis/code/configuration checks plus original native creation transaction, ProgramData slot visibility and upgrade policy |
+| Deployment recovery | Public journal, exact-byte resume, actual confirmed-fee recovery, unchanged-message checks and uncertain-outcome stops |
 | Replay and expiry | Monotonic creator nonce and expiry checked again during final execution |
 | Large-signature transport | Bounded uploader-specific proof accounts, exact offset checks, immutable sealed payload and staged on-chain verification |
 | Atomic token creation | Classic SPL mint, full initial distribution, revoked mint authority, no freeze authority, immutable Metaplex metadata and immutable launch record |
@@ -44,6 +48,7 @@ Use Node **22.22.0+** and Python **3.11+**. Install locked JavaScript dependenci
 npm ci --ignore-scripts --no-audit --no-fund
 npm test
 npm run test:sdk
+node --test server/tests/*.test.mjs
 npm run test:signing
 npm run test:vectors
 npm run test:mutations
@@ -64,6 +69,33 @@ Inspect [the build script](scripts/build-onchain.sh), [validator runner](scripts
 and [actual integration test](tests/onchain-localnet.mjs) before running them.
 The integration runner deliberately uses an isolated validator and synthetic
 payer/genesis fixtures. It is not a mainnet deployment command.
+
+## Deploy through Phantom
+
+The separate operator console connects an explicitly selected Phantom wallet,
+shows current rent/fees and exact artifact identity, and requests wallet signatures
+only after deployment-cost review. Its SDK lives in [`sdk/deployer.mjs`](sdk/deployer.mjs):
+
+```js
+import {
+  prepareDeployment, executeDeployment,
+  inspectFinalization, finalizeDeployment,
+} from './sdk/deployer.mjs';
+```
+
+Preparation is read-only. Execution uploads the reviewed program in wallet-approved
+batches of at most ten transactions, deploys it and initializes its configuration.
+The separate finalization action permanently removes upgrade authority. Public
+journals retain the seeds, transaction signatures and original deployment proof;
+wallet secrets remain with the wallet. See [the complete operator API](sdk/OPERATOR.md)
+and [mainnet acceptance/cost evidence](docs/MAINNET_DEPLOYMENT.md).
+
+The recorded mainnet preflight for the pinned 168,568-byte artifact showed
+**0.86122104 SOL required funding**, including a 0.002 SOL network-fee ceiling,
+and **0.86018104 SOL estimated net deployment cost**. Buffer funds are reused
+before ProgramData allocation. These are timestamped read-only quotes, not a
+mainnet deployment or a permanent price; refresh them before approval. Creator
+registration and token creation have separate costs.
 
 ## Register a creator and launch
 
@@ -105,6 +137,20 @@ initialization front-running, account/payer substitution, upload offsets and
 ownership, corrupted signatures, altered intents, preview-domain rejection,
 replay, final expiry and failed-CPI rollback.
 
+[evidence/deploy-localnet.json](evidence/deploy-localnet.json) separately records
+**244 actual local-validator transactions and 15 checks** for original native
+loader deployment using one synthetic wallet and no program/buffer private keys.
+It covers exact uploads, interruption/recovery, cancellation, changed wallet
+messages, failed-deployment rollback, buffer-rent credit, bootstrap, immutable
+finalization and a subsequent creator registration/token launch. Its source
+snapshot and deployer hashes identify the exact tested implementation.
+
+[evidence/phantom-mainnet-preflight.json](evidence/phantom-mainnet-preflight.json)
+records real mainnet reads from the compiled HTTPS Worker with an explicitly
+simulated public-only Phantom adapter. It requested **zero signatures and zero
+transactions**. Actual extension behavior and funded mainnet execution remain
+separate acceptance gates.
+
 The earlier cryptographic release evidence remains separate:
 
 - [evidence/validation.json](evidence/validation.json): the historical preview
@@ -141,7 +187,8 @@ creators' fingerprints through a separate trusted channel.
 | `programs/qcommit-launch/` | Solana program, proof staging and atomic token creation |
 | `crates/launch-core/` | Binary protocol and account validation |
 | `crates/slh-verify/` | Independent Rust SLH-DSA verifier |
-| `sdk/` | Production approval codec, deployment checks, client, receipt verifier and CLI |
+| `sdk/` | Production approval codec, wallet-signed deployment, client, receipt verifier and CLI |
+| `server/` | Restricted same-origin launch/operator RPC policies and mocked boundary tests |
 | `src/vault.mjs` | Encrypted creator backups |
 | `src/slh-verify.mjs` | Independent JavaScript signature verification |
 | `src/protocol.mjs`, `cli/` | Historical preview protocol and independent Python verifier |
