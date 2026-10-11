@@ -1,0 +1,34 @@
+{
+  "checkedAt": "2026-10-11T05:40:19.675Z",
+  "scope": "Read-only unsigned mainnet RPC simulation. A recent public DBC payer was used only as a simulation account; no access to that wallet, no signatures, no broadcast, no tokens created.",
+  "owner": "5EJVyCiS6B84Hr1Cq9eDaQg1BLEtjypNNsmD3Lshyc6d",
+  "balanceLamports": 47065669,
+  "mint": "HAvCB5Azgdc1WcHGCXLU4RoiLDPzCpQybcmi81nHG1fQ",
+  "pool": "EATe5KvAnPkfsdzrGvG1JtG5s6SHTXYbEzUVakzGp9cW",
+  "transactionBytes": 833,
+  "requiredSignatures": 2,
+  "networkFeeLamports": 10000,
+  "messageSha256": "b0e80c0f563c4d233cade897adb85ff0ef7091e436b51833e371433c070a0850",
+  "simulationError": null,
+  "unitsConsumed": 99084,
+  "estimatedAccountLamports": 20581640,
+  "accounts": [
+    {
+      "owner": "11111111111111111111111111111111",
+      "lamports": 26474029,
+      "dataBytes": 0
+    },
+    {
+      "owner": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+      "lamports": 1066800,
+      "dataBytes": 82
+    },
+    {
+      "owner": "dbcij3LWUppWqq96dh6gJWwBifmcGfLSB5D4DuSMaqN",
+      "lamports": 2804160,
+      "dataBytes": 424
+    }
+  ],
+  "configuration": "7iVJv4mvgYnAcY19dKvHGHa6uo4nzDMGk9FoaQ4S9isM",
+  "program": "dbcij3LWUppWqq96dh6gJWwBifmcGfLSB5D4DuSMaqN"
+}

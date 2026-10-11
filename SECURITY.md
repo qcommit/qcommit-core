@@ -1,9 +1,10 @@
 # Security boundaries
 
-Research software. No independent cryptographic or smart-contract audit. No
-production launch, mainnet deployment, audited custody, or NIST module validation.
+No independent cryptographic or smart-contract audit, audited custody or NIST
+module validation is claimed. The hosted launchpad uses Meteora DBC; this core
+provides portable creator signatures and offline verification.
 
-## What a preview proof establishes
+## What a creator proof establishes
 
 A valid signature establishes that the included fields were signed by the holder
 of the corresponding SLH-DSA secret key, within the assumptions and correctness
@@ -12,15 +13,19 @@ creator, the verifying user must independently pin the expected key/fingerprint.
 An arbitrary label and a key supplied inside the same receipt are not identity
 verification. A mathematically valid signature can be expired or future-dated.
 
-The profile is pure SLH-DSA-SHA2-128s signing an application SHA-256 digest with a
-separate preview-only context. It is not the standardized HashSLH-DSA interface.
+The profiles use pure SLH-DSA-SHA2-128s to sign an application SHA-256 digest.
+The historical preview uses `Qcommit.LaunchPreview.v1`; current Meteora creator
+commitments use the distinct `Qcommit.MeteoraLaunch.v1` context. It is not the
+standardized HashSLH-DSA interface.
 The application digest and framing are part of the security boundary.
 
 ## What is not established
 
-No program account, mint, supply, token metadata availability, transaction
-confirmation, deployer authority, on-chain nonce, or creator registration is
-verified by this preview. No launch is submitted. A signature does not guarantee
+The offline core verifier does not query program accounts, mints, supplies,
+metadata availability or transaction confirmation. The website separately
+submits user-signed transactions and checks confirmed Meteora pool identity.
+Those RPC checks do not establish on-chain enforcement of the creator signature.
+A signature does not guarantee
 a project's honesty, liquidity, token value, legal compliance, or safe economics.
 Solana consensus, ordinary funding-wallet signatures, RPCs, and external programs
 remain outside Qcommit's post-quantum creator-authorization boundary.
@@ -44,9 +49,9 @@ custody model. JavaScript cannot guarantee erasure of all copies or strings.
 Review dependency sources and licenses, generate and commit a verified lockfile,
 run Noble-to-native integration tests, extend ACVP coverage, fuzz both parsers,
 and commission review before publishing security claims. Do not publish private
-keys, runtime vault files or seed phrases. Configure a private vulnerability
-reporting channel on the eventual GitHub repository before public adoption.
-There is no deployed service or funded bug bounty in this release.
+keys, runtime vault files or seed phrases. The GitHub repository and hosted
+website do not imply an independent audit or
+a funded bug bounty.
 
 Published NIST sigGen fixtures contain deliberately public test secret keys.
 They are test data, not production signing keys; never use them to protect assets.

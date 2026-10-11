@@ -1,21 +1,22 @@
 # Program-enforced launch: integration requirements
 
-**Not implemented by this preview.** The earlier Quantum Seal smart-wallet
-program is not automatically a token-launch program. Do not connect a production
-mint operation to the preview UI merely because its off-chain signature verifies.
+The current Qcommit launchpad uses **Meteora DBC execution with a separately
+verified creator receipt**. That path does not require deploying a custom Qcommit
+program. See [METEORA_LAUNCH.md](METEORA_LAUNCH.md) for its implemented format,
+wallet flow and executed evidence.
 
-## User-facing target
+This document specifies a different architecture in which a launch program
+itself enforces the post-quantum authorization. A valid off-chain receipt does
+not establish that an external program performed those checks. The historical
+`Qcommit.LaunchPreview.v1` fixture and the Meteora receipt domain must not be
+accepted as authorizations for such a custom program.
 
-1. Connect a compatible Solana wallet to fund launch/network costs.
-2. Create or restore a reusable post-quantum creator identity.
-3. Register/pin the creator's post-quantum key in the launch program.
-4. Review and sign exact token parameters with that creator key.
-5. Present explicit costs and transaction instructions to the funding wallet.
-6. Verify the post-quantum approval on chain, then create the approved token.
-7. Return a downloadable authorization plus independently checkable execution evidence.
+## Program-enforced architecture
 
-Steps 3, 5, 6 and 7's chain evidence are not supplied by this package. Step 2's
-browser signer needs the pinned Noble dependency prepared before it operates.
+A funding wallet pays costs, a reusable creator key signs the exact commitment,
+and the program verifies the creator's registered key, nonce and signature
+before atomically creating the token. This architecture adds requirements
+beyond the current Meteora receipt route.
 
 ## Required production authorization
 
