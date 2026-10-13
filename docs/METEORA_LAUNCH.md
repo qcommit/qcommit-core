@@ -85,7 +85,10 @@ not establish the creator's identity.
   without a wallet or account. It reads on-chain metadata, public token JSON and
   exact-mint DEX Screener pairs to fill available name, symbol, image, description,
   website and pool fields. Missing fields stay editable; existing CAs reopen
-  their saved listing.
+  their saved listing. Metadata retrieval retries the same IPFS content through
+  alternate public gateways if one provider fails; raw SHA-256 CIDs are checked
+  against the returned bytes. IPFS images use an available gateway. Use Load token
+  in an existing listing to refresh previously missing fields before saving.
 - Admin shows the current Explore tokens with direct Hide from Explore controls,
   plus a Hidden tokens list with Show in Explore. Hiding preserves the stored
   listing and its original receipts.
